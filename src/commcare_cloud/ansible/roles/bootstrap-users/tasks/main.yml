@@ -1,5 +1,9 @@
 ---
 - name: Set bash prompt in bash.bashrc
+  become: yes
+    become_method: sudo
+    become_user: 'ansible'
+    become_pass: 'Root@123#'
   lineinfile:
     dest: "/etc/bash.bashrc"
     regexp: "^PS1=.*"
